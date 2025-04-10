@@ -1,5 +1,8 @@
-
+import { Suspense } from "react";
 import "./globals.css";
+import Loading from "./loading";
+import CommonLayout from "@/components/common-layout";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 export const metadata = {
@@ -9,10 +12,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased`}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`antialiased`}>
+          <Suspense fallback={<Loading />}>
+            <CommonLayout children={children} />
+          </Suspense>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
