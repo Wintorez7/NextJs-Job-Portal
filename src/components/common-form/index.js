@@ -10,12 +10,13 @@ function CommonForm({
   btnType,
   formData,
   setFormData,
+  handleFileChange,
 }) {
   function renderInputByComponentType(getCurrentControl) {
     let content = null;
 
     switch (getCurrentControl.componentType) {
-      case value:
+      case "input":
         content = (
           <div className=" relative flex items-center mt-8">
             <Input
@@ -25,7 +26,7 @@ function CommonForm({
               name={getCurrentControl.name}
               id={getCurrentControl.name}
               value={formData[getCurrentControl.name]}
-              onChage={(event) =>
+              onChange={(event) =>
                 setFormData({
                   ...formData,
                   [event.target.name]: event.target.value,
@@ -44,7 +45,11 @@ function CommonForm({
             className="flex bg-gray-100 items-center px-3 py-3 mx-auto mt-6 text-center border-2 border-dashed rounded-lg cursor-pointer"
           >
             <h2>{getCurrentControl.Label}</h2>
-            <Input onChange={handleFileChange} />
+            <Input
+              onChange={handleFileChange}
+              id={getCurrentControl.name}
+              type="file"
+            />
           </Label>
         );
         break;
@@ -58,7 +63,7 @@ function CommonForm({
               name={getCurrentControl.name}
               id={getCurrentControl.name}
               value={formData[getCurrentControl.name]}
-              onChage={(event) =>
+              onChange={(event) =>
                 setFormData({
                   ...formData,
                   [event.target.name]: event.target.value,
@@ -75,13 +80,14 @@ function CommonForm({
 
   return (
     <form action={action}>
-      {formcontrols.map((control) => renderInputByComponentType(control))}
+      {formcontrols.map((control) => (
+        <div key={control.name}>{renderInputByComponentType(control)}</div>
+      ))}
       <div className="mt-6 w-full">
         <Button
           type={btnType || "submit"}
           disabled={isBtnDisabled}
-          className=" disabled:opacity-60 flex h-11 items-center justify-center px-5"
-        >
+          className=" disabled:opacity-60 flex h-11 items-center justify-center px-5">
           {buttonText}
         </Button>
       </div>

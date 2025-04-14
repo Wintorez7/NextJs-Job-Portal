@@ -46,7 +46,7 @@ function Header({user}) {
 
   return (
     <div>
-      <header className="flex h-16 w-full shrink-0 items-center">
+      <header suppressHydrationWarning className="flex h-16 w-full shrink-0 items-center">
         <Sheet>
           <SheetTrigger asChild>
             <Button className="lg:hidden ">
