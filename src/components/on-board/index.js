@@ -4,13 +4,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useState } from "react";
 import CommonForm from "../common-form";
-import { initialRecruterFormData, recruiterOnboardFormControls } from "@/utils";
+import { candidateOnboardFormControls, initialCandidateFormData, initialRecruterFormData, recruiterOnboardFormControls } from "@/utils";
 
 function OnBoard() {
   const [currentTab, setCurrentTab] = useState("candidate");
   const [recruiterFormData,setRecruiterFormData] = useState(
     initialRecruterFormData
   );
+  const [candidateFormData,setCandidateFormData] = useState(initialCandidateFormData);
 
   function handleTabChange(value) {
     setCurrentTab(value);
@@ -34,7 +35,14 @@ function OnBoard() {
             </TabsList>
           </div>
         </div>
-        <TabsContent value="candidate">candidate</TabsContent>
+        <TabsContent value="candidate">
+          <CommonForm
+            formcontrols={candidateOnboardFormControls}
+            buttonText={'Onboard as recruiter'}
+            formData={candidateFormData}
+            setFormData={setCandidateFormData}
+          />
+        </TabsContent>
         <TabsContent value="recruiter">
           <CommonForm
             formcontrols={recruiterOnboardFormControls}

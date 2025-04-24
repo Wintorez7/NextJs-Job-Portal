@@ -110,12 +110,6 @@ export const candidateOnboardFormControls = [
         placeholder:'Enter your Gihthub Profile',
         componentType:'input'
     },
-    {
-        label:'Gihthub Profile',
-        name:'githubProfile',
-        placeholder:'Enter your Gihthub Profile',
-        componentType:'input'
-    },
     
     
 ]
