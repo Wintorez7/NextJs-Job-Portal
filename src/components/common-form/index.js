@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -41,7 +42,7 @@ function CommonForm({
       case "file":
         content = (
           <Label
-            for={getCurrentControl.name}
+            htmlFor={getCurrentControl.name}
             className="flex bg-gray-100 items-center px-3 py-3 mx-auto mt-6 text-center border-2 border-dashed rounded-lg cursor-pointer"
           >
             <h2>{getCurrentControl.Label}</h2>

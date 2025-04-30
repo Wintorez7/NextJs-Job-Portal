@@ -17,6 +17,13 @@ function OnBoard() {
     setCurrentTab(value);
   }
 
+  console.log(recruiterFormData,"recruiterFormData")
+
+  function handlerecruiterFormValid(){
+      return recruiterFormData && recruiterFormData.name.trim() !== '' &&
+      recruiterFormData.companyName.trim() !== '' && recruiterFormData.companyRole.trim() !== ''
+  }
+
   return (
     <div className="bg-white">
       <Tabs value={currentTab} onValueChange={handleTabChange}>
@@ -49,6 +56,7 @@ function OnBoard() {
             buttonText={"Onboard as recruiter"}
             formData={recruiterFormData}
             setFormData={setRecruiterFormData}
+            isBtnDisabled={!handlerecruiterFormValid()}
           />
         </TabsContent>
       </Tabs>
