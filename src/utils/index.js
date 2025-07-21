@@ -130,12 +130,10 @@ export const initialCandidateFormData = {
     graduatedYear :'',
     linkedinProfile :'',
     githubProfile :'', 
-    isPremiumUser :false
 }
 
 export const initialRecruterFormData = {
     name:'',
     companyName:'',
     companyRole:'',
-    isPremiumUser:false
 }
