@@ -74,6 +74,7 @@ function Header({user}) {
             </div>
           </SheetContent>
         </Sheet>
+        
         <Link className="hidden lg:flex mr-6" href={'/'}>JOBSCO</Link>
         <nav className="ml-auto hidden lg:flex gap-6">
           {
