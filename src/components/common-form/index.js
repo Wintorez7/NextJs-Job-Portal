@@ -50,6 +50,7 @@ function CommonForm({
               onChange={handleFileChange}
               id={getCurrentControl.name}
               type="file"
+              className="hover:bg-gray-200 transition-all duration-200"
             />
           </Label>
         );
