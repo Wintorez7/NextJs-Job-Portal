@@ -70,9 +70,11 @@ function Header({user}) {
                     </Link>
                   )
               )}
-            <UserButton afterSignOutUrl="/"/> 
             </div>
           </SheetContent>
+          <div className="lg:hidden relative flex justify-end w-full right-6 z-50">
+            <UserButton afterSignOutUrl="/" />
+          </div>
         </Sheet>
         
         <Link className="hidden lg:flex mr-6" href={'/'}>JOBSCO</Link>
