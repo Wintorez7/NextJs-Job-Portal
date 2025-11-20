@@ -76,7 +76,7 @@ function Header({user}) {
         </Sheet>
         
         <Link className="hidden lg:flex mr-6" href={'/'}>JOBSCO</Link>
-        <nav className="ml-auto hidden lg:flex gap-6">
+        <nav className="ml-auto hidden lg:flex gap-6">  
           {
             menuItems.map((item) => item.show ?
             <Link key={item.path} href={item.path} className=" group inline-flex h-9 w-max items-center rounded-md bg-white px-4 py-2 text-sm font-md font-semibold">
