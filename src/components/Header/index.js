@@ -70,7 +70,7 @@ function Header({user}) {
                     </Link>
                   )
               )}
-            <UserButton afterSignOutUrl="/"/>
+            <UserButton afterSignOutUrl="/"/> 
             </div>
           </SheetContent>
         </Sheet>
