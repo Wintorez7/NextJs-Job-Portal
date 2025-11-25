@@ -34,20 +34,20 @@ export const candidateOnboardFormControls = [
     },
     {
         label:'Current Company',
-        name:'currentCompnay',
+        name:'currentCompany',
         placeholder:'Enter your company name',
         componentType:'input'
     },
     {
         label:'Current Job Location',
-        name:'currentJobLoction',
+        name:'currentJobLocation',
         placeholder:'Enter your currentJobLocation',
         componentType:'input'
     },
     {
         label:'Prefered Job Location',
-        name:'preferedJobLoction',
-        placeholder:'Enter your preferedJobLocation',
+        name:'preferdJobLocation',
+        placeholder:'Enter your preferdJobLocation',
         componentType:'input'
     },
     {
@@ -58,8 +58,8 @@ export const candidateOnboardFormControls = [
     },
     {
         label:'Notice Period',
-        name:'noticePeroid',
-        placeholder:'Enter your Notice Peroid',
+        name:'noticePeriod',
+        placeholder:'Enter your Notice Period',
         componentType:'input'
     },
     {
@@ -70,7 +70,7 @@ export const candidateOnboardFormControls = [
     },
     {
         label:'Previous Companies',
-        name:'previousCompanies',
+        name:'previousCompany',
         placeholder:'Enter your Previous Companies',
         componentType:'input'
     },
@@ -94,7 +94,7 @@ export const candidateOnboardFormControls = [
     },
     {
         label:'Graduated year',
-        name:'graduatedyear',
+        name:'graduatedYear',
         placeholder:'Enter your Graduated Year',
         componentType:'input'
     },

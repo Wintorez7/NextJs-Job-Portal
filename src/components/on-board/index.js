@@ -29,6 +29,13 @@ function OnBoard() {
       recruiterFormData.companyName.trim() !== '' && recruiterFormData.companyRole.trim() !== ''
   }
 
+  function handleCandidateFormValid(){
+    return candidateFormData && candidateFormData.name.trim() !== '' &&
+      candidateFormData.currentCompany.trim() !== '' && candidateFormData.currentJobLocation.trim() !== '' && candidateFormData.preferdJobLocation.trim() !== '' && candidateFormData.currentSalary.trim() !== '' && candidateFormData.noticePeriod.trim() !== ''
+      && candidateFormData.skills.trim() !== '' && candidateFormData.skills.trim() !== '' && candidateFormData.previousCompany.trim() !== ''
+      && candidateFormData.totalExperience.trim() !== '' && candidateFormData.college.trim() !== '' && candidateFormData.collegeLocation.trim() !== '' && candidateFormData.graduatedYear.trim() !== '' && candidateFormData.linkedinProfile.trim() !== '' && candidateFormData.githubProfile.trim() !== ''
+  }
+
   async function createProfileAction() {
       const data =  {
       recruiterInfo : recruiterFormData,
@@ -62,9 +69,10 @@ function OnBoard() {
         <TabsContent value="candidate">
           <CommonForm
             formcontrols={candidateOnboardFormControls}
-            buttonText={'Onboard as recruiter'}
+            buttonText={'Onboard as candidate'}
             formData={candidateFormData}
             setFormData={setCandidateFormData}
+            isBtnDisabled={!handleCandidateFormValid()}
           />
         </TabsContent>
         <TabsContent value="recruiter">
