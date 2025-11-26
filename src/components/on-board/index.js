@@ -47,6 +47,7 @@ function OnBoard() {
 
       await createProfileAction(data, "/onboard");
   }
+  
 
   return (
     <div className="bg-white">
