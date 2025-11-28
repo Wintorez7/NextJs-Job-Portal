@@ -6,6 +6,7 @@ import { useState } from "react";
 import CommonForm from "../common-form";
 import { candidateOnboardFormControls, initialCandidateFormData, initialRecruterFormData, recruiterOnboardFormControls } from "@/utils";
 import { useUser } from "@clerk/nextjs";
+import { createProfileAction } from "@/app/actions";
 
 function OnBoard() {
   const [currentTab, setCurrentTab] = useState("candidate");
@@ -36,7 +37,7 @@ function OnBoard() {
       && candidateFormData.totalExperience.trim() !== '' && candidateFormData.college.trim() !== '' && candidateFormData.collegeLocation.trim() !== '' && candidateFormData.graduatedYear.trim() !== '' && candidateFormData.linkedinProfile.trim() !== '' && candidateFormData.githubProfile.trim() !== ''
   }
 
-  async function createProfileAction() {
+  async function createProfile() {
       const data =  {
       recruiterInfo : recruiterFormData,
       role : 'recruiter',
@@ -83,7 +84,7 @@ function OnBoard() {
             formData={recruiterFormData}
             setFormData={setRecruiterFormData}
             isBtnDisabled={!handlerecruiterFormValid()}
-            action={createProfileAction}
+            action={createProfile}
           />
         </TabsContent>
       </Tabs>
