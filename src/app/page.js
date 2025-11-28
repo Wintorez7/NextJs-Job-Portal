@@ -1,12 +1,13 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { fetchProfileAction } from "./actions";
 
 async function Home() {
   const user = await currentUser();
-  // console.log(user, "currentuser");
 
-  const profileInfo = null;
-  if (user && !profileInfo?._id) redirect("/onboard");
+  const profileInfo = await fetchProfileAction(user?.id);
+  if(user && !profileInfo?.id) redirect('/onboard ')
+
 
   return (
     <div>

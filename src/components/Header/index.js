@@ -5,7 +5,7 @@ import { AlignJustify } from "lucide-react";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 
-function Header({user}) {
+function Header({user,profileInfo}) {
   const menuItems = [
     {
       label: "Home",
@@ -22,14 +22,14 @@ function Header({user}) {
       path: "/sign-up",
       show: !user,
     },
+        {
+      label: "Activity",
+      path: "/activity",
+      show: profileInfo?.role === 'candidate',
+    },
     {
       label: "Jobs",
       path: "/jobs",
-      show: user,
-    },
-    {
-      label: "Activity",
-      path: "/activity",
       show: user,
     },
     {
